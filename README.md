@@ -12,7 +12,7 @@ at the price of some manual effort.
 
 ```sh
 npm install html-to-latex-listing
-npx html-to-latex-listing snippet.html
+npx html-to-latex-listing 'snippet/*.html'
 ```
 
 ```latex
@@ -20,6 +20,6 @@ npx html-to-latex-listing snippet.html
 \usepackage{xcolor}
 \usepackage{fancyvrb}
 \begin{document}
-\VerbatimInput[commandchars=\\\{\}]{snippet.tex}
+\VerbatimInput[commandchars=\\\{\}]{snippet/foo.tex}
 \end{document}
 ```
