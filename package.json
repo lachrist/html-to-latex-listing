@@ -1,7 +1,7 @@
 {
   "name": "html-to-latex-listing",
-  "version": "0.0.0",
-  "bind": {
+  "version": "0.0.2",
+  "bin": {
     "html-to-latex-listing": "bin/index.mjs"
   },
   "main": "lib/index.mjs",
@@ -13,6 +13,7 @@
   },
   "files": [
     "lib/",
+    "bin/",
     "README.md"
   ],
   "dependencies": {
