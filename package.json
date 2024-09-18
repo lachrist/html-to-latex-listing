@@ -1,0 +1,28 @@
+{
+  "name": "html-to-latex-listing",
+  "version": "0.0.0",
+  "bind": {
+    "html-to-latex-listing": "bin/index.mjs"
+  },
+  "main": "lib/index.mjs",
+  "scripts": {
+    "check-format": "npx prettier -c '**/*.(mjs|d.ts)'",
+    "check-type": "npx tsc",
+    "check": "npm run check-format && npm run check-type",
+    "test": "sh test/test.sh"
+  },
+  "files": [
+    "lib/",
+    "README.md"
+  ],
+  "dependencies": {
+    "minimist": "^1.2.8",
+    "node-html-parser": "^6.1.13"
+  },
+  "devDependencies": {
+    "@types/minimist": "^1.2.5",
+    "@types/node": "^22.5.5",
+    "prettier": "^3.3.3",
+    "typescript": "^5.6.2"
+  }
+}
