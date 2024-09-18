@@ -1,3 +1,3 @@
-node bin/index.js test/foo.html -o test/foo.tex
+node bin/index.mjs test/foo.html
 pdflatex test/main.tex
 rm main.aux main.log

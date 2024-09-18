@@ -12,7 +12,7 @@ at the price of some manual effort.
 
 ```sh
 npm install html-to-latex-listing
-npx html-to-latex-listing snippet.html -o snippet.tex
+npx html-to-latex-listing snippet.html
 ```
 
 ```latex

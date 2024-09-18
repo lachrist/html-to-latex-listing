@@ -1,6 +1,6 @@
 {
   "name": "html-to-latex-listing",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "bin": {
     "html-to-latex-listing": "bin/index.mjs"
   },
@@ -17,7 +17,6 @@
     "README.md"
   ],
   "dependencies": {
-    "minimist": "^1.2.8",
     "node-html-parser": "^6.1.13"
   },
   "devDependencies": {

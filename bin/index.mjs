@@ -2,31 +2,30 @@
 
 import { argv, stderr, stdout } from "node:process";
 import { toLatexListing } from "../lib/index.mjs";
-import minimist from "minimist";
 
 import { readFile, writeFile } from "node:fs/promises";
 
 /**
  * @type {(
  *   argv: string[],
- * ) => Promise<void>}
+ * ) => Promise<number>}
  */
 export const main = async (argv) => {
-  const options = minimist(argv);
-  if (options._.length !== 1) {
-    stderr.write(
-      "Usage: html-to-latex-listing <input.html> [-o <output.tex>]\n",
-    );
-    process.exitCode = 1;
+  if (argv.length === 0) {
+    stderr.write("Usage: html-to-latex-listing [... <input.html>]\n");
+    return 1;
   } else {
-    const html = await readFile(options._[0], "utf8");
-    const latex = toLatexListing(html);
-    if ("o" in options) {
-      await writeFile(options.o, latex);
-    } else {
-      stdout.write(latex);
+    for (const path of argv) {
+      const html = await readFile(path, "utf8");
+      const latex = toLatexListing(html);
+      if (path.endsWith(".html")) {
+        await writeFile(path.substring(0, path.length - 5) + ".tex", latex);
+      } else {
+        await writeFile(`${path}.tex`, latex);
+      }
     }
+    return 0;
   }
 };
 
-await main(argv.slice(2));
+process.exitCode = await main(argv.slice(2));
