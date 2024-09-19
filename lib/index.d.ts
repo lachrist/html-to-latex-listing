@@ -1,1 +1,1 @@
-export type toLatexListing = (html: string) => string;
+export function toLatexListing(html: string): string;
